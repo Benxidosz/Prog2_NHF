@@ -3,7 +3,6 @@
 #include "Csucs.hpp"
 #include "memtrace.h"
 #include "gtest_lite.h"
-#define MENTRACE
 
 int main()
 {
@@ -25,6 +24,4 @@ int main()
     TEST(testGraf, getCsucsdb) {
         EXPECT_EQ((size_t)4, testGraf.getCsucsdb()) << "getCsucsdb nem jo" << std::endl;
     } ENDM
-    int* a = new int[5];
-    a[1] = 0;
 }
