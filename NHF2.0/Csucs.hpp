@@ -9,13 +9,8 @@ class Csucs{
     size_t fokszam;
 public:
     Csucs(T adat): adat(adat), fokszam(0){
-        std::cout << "Csucs ctor" << std::endl;
         szomszedok = new Csucs*[MaxFok];
     }
-    Csucs(const Csucs& other){
-        std::cout << "Csucs copytor" << std::endl;
-    }
-
     T getAdat(){
         return this->adat;
     }
@@ -23,17 +18,30 @@ public:
         this->adat = adat;
     }
 
-    bool push(const Csucs* cs){
-        std::cout << "Csucs push" << std::endl;
-        return 0;
+    bool push(Csucs* cs){
+        if(fokszam >= MaxFok){
+            return false;
+        }else{
+            szomszedok[fokszam++] = cs;
+            return true;
+        }
     }
-    size_t findSzomszed(const Csucs* cs){
-        std::cout << "Csucs findszomszed" << std::endl;
-        return 0;
+    size_t findSzomszed(Csucs* cs){
+        for(size_t i = 0; i < fokszam; ++i)
+            if(cs == szomszedok[i])
+                return i;
+        return MaxFok;
     }
-    bool remove(const Csucs* cs){
-        std::cout << "Csucs remove" << std::endl;
-        return 0;
+    bool remove(Csucs* cs){
+        size_t tempi = this->findSzomszed(cs);
+        if(tempi >= fokszam)
+            return false;
+        else{
+            for(size_t i = 0; i < fokszam - 1; ++i)
+                szomszedok[i] = szomszedok[i + 1];
+            szomszedok[fokszam] = NULL;
+            return true;
+        }
     }
 
     size_t getFok(){
@@ -41,12 +49,15 @@ public:
     }
 
     Csucs* operator [](size_t i){
-        std::cout << "Csucs index" << std::endl;
+        if(i >= fokszam){
+            throw("Unvalid index!!");
+            return NULL;
+        }
+        return szomszedok[i];
     }
 
     ~Csucs(){
         delete[] szomszedok;
-        std::cout << "Csucs dtor" << std::endl;
     }
 };
 

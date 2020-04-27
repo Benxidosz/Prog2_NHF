@@ -27,6 +27,16 @@ int main()
         EXPECT_EQ((size_t)4, testGraf.getCsucsdb()) << "getCsucsdb nem jo" << std::endl;
     }ENDM
 
+    TEST(testGraf, index) {
+        EXPECT_EQ(3, testGraf[2]->getAdat()) << "Problem with index" << std::endl;
+    }ENDM
+
+    TEST(testGraf, csucsindex) {
+        EXPECT_EQ(1, testGraf[2]->getAdat()) << "Problem with index" << std::endl;
+    }ENDM
+
+
+
     delete[] t;
     for(int i =0; i < 4; ++i)
         delete[] m[i];

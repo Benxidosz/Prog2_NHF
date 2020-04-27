@@ -21,7 +21,6 @@ class Graf{
     bool** matrix;
 public:
     Graf(T* adatok, bool** matrix): elekDb(((N*(N-1))/2)+1), osszeFugges(nincsinf), matrix(NULL){
-        std::cout << "Graf ctor" << std::endl;
         this->csucsok = new Csucs<T, N-1>*[N];
         for(size_t i = 0; i < N; ++i){
             this->csucsok[i] = new Csucs<T, N-1>(adatok[i]);
@@ -33,35 +32,33 @@ public:
     }
 
     Graf(const Graf& other){
-        std::cout << "Graf copyor" << std::endl;
+
     }
 
     size_t bejar(size_t csucsi, BFS_lepes<T, N-1>* ut){
-        std::cout << "Graf bejar" << std::endl;
         return 0;
     }
     bool osszefuggo(){
-        std::cout << "Graf osszefugg" << std::endl;
         return 0;
     }
     size_t getCsucsdb(){
         return N;
     }
     size_t getEldb(){
-        std::cout << "Graf osszefugg" << std::endl;
         return 0;
     }
     bool** getMatrix(){
-        std::cout << "Graf getMatrix" << std::endl;
         return NULL;
     }
     Csucs<T, N-1>* operator [](size_t i){
-        std::cout << "Graf index operator" << std::endl;
-        return NULL;
+        if(i >= N){
+            throw("Unvalid index!!");
+            return NULL;
+        }
+        return csucsok[i];
     }
 
     ~Graf(){
-        std::cout << "Graf dtor" << std::endl;
         for(size_t i = 0; i < N; ++i)
             delete csucsok[i];
         delete[] csucsok;
