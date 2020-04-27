@@ -19,9 +19,16 @@ int main()
         for(int j = 0; j < 4; ++j)
             m[i][j] = tempm[i][j];
     }
+
     GTINIT(std::cin);
     Graf<int, (size_t)4> testGraf(t,m);
+
     TEST(testGraf, getCsucsdb) {
         EXPECT_EQ((size_t)4, testGraf.getCsucsdb()) << "getCsucsdb nem jo" << std::endl;
-    } ENDM
+    }ENDM
+
+    delete[] t;
+    for(int i =0; i < 4; ++i)
+        delete[] m[i];
+    delete[] m;
 }

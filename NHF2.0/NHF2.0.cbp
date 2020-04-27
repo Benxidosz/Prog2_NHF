@@ -32,7 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Csucs.hpp" />
+		<Unit filename="Graf.hpp" />
+		<Unit filename="gtest_lite.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="memtrace.cpp" />
+		<Unit filename="memtrace.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
