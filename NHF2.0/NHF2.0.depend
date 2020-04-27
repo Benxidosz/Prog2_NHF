@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1588018535 source:d:\progrmoksaját\prog2_nhf\nhf2.0\main.cpp
+	<iostream>
+	"Graf.hpp"
+	"Csucs.hpp"
+	"memtrace.h"
+	"gtest_lite.h"
+
+1588017997 d:\progrmoksaját\prog2_nhf\nhf2.0\graf.hpp
+	"Csucs.hpp"
+	<iostream>
+
+1588016787 d:\progrmoksaját\prog2_nhf\nhf2.0\csucs.hpp
+	<iostream>
+
+1587993169 source:d:\progrmoksaját\prog2_nhf\nhf2.0\memtrace.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	"memtrace.h"
+
+1587993169 d:\progrmoksaját\prog2_nhf\nhf2.0\memtrace.h
+	<new>
+	<cstdio>
+	<stdlib.h>
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<list>
+	<map>
+	<algorithm>
+	<functional>
+
+1587993169 d:\progrmoksaját\prog2_nhf\nhf2.0\gtest_lite.h
+	<iostream>
+	<cassert>
+	<cmath>
+	<cstring>
+	<limits>
+	<string>
+	<fstream>
+	"memtrace.h"
+
